@@ -1,6 +1,6 @@
-FROM fedora
+FROM alpine
 
-RUN dnf -y install openvpn; \
-	dnf clean all
+RUN apk update
+RUN apk add openvpn
 
 ENTRYPOINT ["/usr/sbin/openvpn"]
